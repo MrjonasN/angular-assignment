@@ -1,0 +1,27 @@
+<div class="col mb-4">
+  <!-- Card -->
+  <div class="card">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" [src]="item.image" alt="Card image cap">
+      <a [routerLink]="['/products/', item._id]">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title">{{ item.name }}</h4>
+      <!--Text-->
+      <p class="card-text">{{ item.short }}</p>
+
+      <a [routerLink]="['/products/', item._id]">
+        <button type="button" class="btn btn-blue btn-md">Read more</button>
+      </a>
+
+    </div>
+    
+  </div>
