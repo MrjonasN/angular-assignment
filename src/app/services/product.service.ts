@@ -15,7 +15,7 @@ export class ProductService {
   getById(id) {
     this.http.get<any>(this._baseUrl + id).subscribe(
       (res) => {
-        this.store.dispatch(new ProductActions.Set(res.products));
+        this.store.dispatch(new ProductActions.Set(res));
       },
       (err) => console.log(err)
     );
