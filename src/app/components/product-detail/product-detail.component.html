@@ -17,7 +17,7 @@
                     <!--Slides-->
                     <div class="carousel-inner text-center text-md-left" role="listbox">
                         <div class="carousel-item active">
-                            <img [src]="product.image" alt="First slide" class="img-fluid">
+                            <img [src]="product.image" alt="image" class="img-fluid">
                         </div>
                     </div>
                     <!--/.Slides-->
@@ -142,7 +142,7 @@
 
                         <div class="row mt-3">
                             <div class="col-md-12 text-center text-md-left text-md-right">
-                                <button class="btn btn-primary btn-rounded">
+                                <button (click)="addToCart(product, 1)" class="btn btn-primary btn-rounded">
                                     <i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
                             </div>
                         </div>

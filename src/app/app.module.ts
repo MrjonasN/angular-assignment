@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http'
 import { ProductCatalogReducer } from './store/reducers/product-catalog-reducer';
 import { ProductReducer } from './store/reducers/product.reducer';
+import { ShoppingCartReducer } from './store/reducers/shoppingcart.reducer';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ProductReducer } from './store/reducers/product.reducer';
     HttpClientModule,
     StoreModule.forRoot({
       productcatalog: ProductCatalogReducer,
-      product: ProductReducer
+      product: ProductReducer,
+      shoppingcart: ShoppingCartReducer
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

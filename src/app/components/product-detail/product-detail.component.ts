@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { IState } from '../../models/istate.model';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../models/iproduct.model';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private productService: ProductService,
+    private shoppingCartService: ShoppingCartService,
     private store: Store<IState>
   ) {}
 
@@ -23,6 +25,10 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getById(this.router.snapshot.params.id);
     this.store
       .select((store) => store.product)
-      .subscribe(res => this.product = res)
+      .subscribe((res) => (this.product = res));
+  }
+
+  addToCart(product, quantity = 1) {
+    this.shoppingCartService.add(product, quantity);
   }
 }
