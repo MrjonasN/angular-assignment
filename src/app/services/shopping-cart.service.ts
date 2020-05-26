@@ -25,7 +25,23 @@ export class ShoppingCartService {
     }
   }
 
+  remove(id) {
+    this.store.dispatch(new ShoppingCartActions.Remove(id));
+  }
+
   increment(product) {
     this.store.dispatch(new ShoppingCartActions.Increment(product));
   }
+
+  decrement(product) {
+    if (product.quantity <= 1) {
+      this.remove(product.product._id);
+    } else {
+      this.store.dispatch(new ShoppingCartActions.Decrement(product));
+    }
+  }
+
+
+
+
 }

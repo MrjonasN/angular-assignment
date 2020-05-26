@@ -11,7 +11,6 @@ export class ProductCardComponent implements OnInit {
 
   @Input('item') public item;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

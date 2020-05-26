@@ -1,6 +1,6 @@
 import { IProduct } from './iproduct.model';
 
 export interface IShoppingCart {
-  product: IProduct;
-  quantity: number;
+  product?: IProduct;
+  quantity?: number;
 }
