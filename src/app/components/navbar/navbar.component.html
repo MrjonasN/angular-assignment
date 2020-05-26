@@ -19,7 +19,24 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
-           <!-- CART -->
+        
+<!-- ShoppingCart -->
+<li class="nav-item dropdown">
+    <a
+      class="nav-link mr-2"
+      type="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      ItemCount
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart">
+      <app-shoppingcart></app-shoppingcart>
+    </div>
+  </li>
+
         </ul>
     </div>
 </nav>

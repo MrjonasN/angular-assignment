@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { ProductCatalogReducer } from './store/reducers/product-catalog-reducer';
 import { ProductReducer } from './store/reducers/product.reducer';
 import { ShoppingCartReducer } from './store/reducers/shoppingcart.reducer';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { ShoppingcartProductComponent } from './components/shoppingcart-product/shoppingcart-product.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { ShoppingCartReducer } from './store/reducers/shoppingcart.reducer';
     ProductCardComponent,
     ProductDetailsViewComponent,
     ProductDetailComponent,
+    ShoppingcartComponent,
+    ShoppingcartProductComponent,
   ],
   imports: [
     BrowserModule,

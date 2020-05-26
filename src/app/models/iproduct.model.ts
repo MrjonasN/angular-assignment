@@ -3,9 +3,9 @@ export interface IProduct {
     name?: string
     short?: string
     desc?: string
-    price?: Number
+    price?: number
     image?: string
-    quantity?: Number
+    quantity?: number
     created?: string
     modified?: string
 }

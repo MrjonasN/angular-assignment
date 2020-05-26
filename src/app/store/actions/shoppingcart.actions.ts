@@ -12,4 +12,9 @@ export class Remove implements Action {
   constructor(public payload: string) {}
 }
 
-export type Actions = Add | Remove;
+export class Increment implements Action {
+  public readonly type = ActionTypes.SHOPPINGCART_INCREMENT;
+  constructor(public payload: IShoppingCart) {}
+}
+
+export type Actions = Add | Remove | Increment;
