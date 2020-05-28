@@ -7,12 +7,14 @@ const initialState: Array<IShoppingCart> = [];
 export function ShoppingCartReducer(state = initialState, action: Actions) {
   switch (action.type) {
     case ActionTypes.SHOPPINGCART_ADD:
-      return (state = [...state, action.payload]);
+      state = [...state, action.payload];
+      return state;
 
     case ActionTypes.SHOPPINGCART_REMOVE:
-      return (state = state.filter(
+      (state = state.filter(
         (item) => item.product._id !== action.payload
-      ));
+      ))
+      return state;
 
     case ActionTypes.SHOPPINGCART_INCREMENT:
       let incItemIndex = state.findIndex((item) => {
@@ -39,6 +41,8 @@ export function ShoppingCartReducer(state = initialState, action: Actions) {
       });
 
     default:
+      let cart = JSON.parse(localStorage.getItem('cart'));
+      if (cart) state = cart;
       return state;
   }
 }
