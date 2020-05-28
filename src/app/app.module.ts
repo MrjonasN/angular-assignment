@@ -13,13 +13,14 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { ProductCatalogReducer } from './store/reducers/product-catalog-reducer';
 import { ProductReducer } from './store/reducers/product.reducer';
 import { ShoppingCartReducer } from './store/reducers/shoppingcart.reducer';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { ShoppingcartProductComponent } from './components/shoppingcart-product/shoppingcart-product.component';
-
+import { ShoppingCartQuantityReducer } from './store/reducers/shoppincart-totalqty.reducer';
+import { ShoppingCartPriceReducer } from './store/reducers/shoppingcart-totalprice.reducer';
 
 @NgModule({
   declarations: [
@@ -37,14 +38,22 @@ import { ShoppingcartProductComponent } from './components/shoppingcart-product/
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({
-      productcatalog: ProductCatalogReducer,
-      product: ProductReducer,
-      shoppingcart: ShoppingCartReducer
-    }, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreModule.forRoot(
+      {
+        productcatalog: ProductCatalogReducer,
+        product: ProductReducer,
+        shoppingcart: ShoppingCartReducer,
+        shoppingcartTotalQty: ShoppingCartQuantityReducer,
+        shoppingcartTotalPrice: ShoppingCartPriceReducer
+      },
+      {}
+    ),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -22,4 +22,14 @@ export class Decrement implements Action {
   constructor(public payload: IShoppingCart) {}
 }
 
-export type Actions = Add | Remove | Increment | Decrement;
+export class TotalQty implements Action {
+  public readonly type = ActionTypes.SHOPPINGCART_TOTALQTY;
+  constructor(public payload: number) {}
+}
+
+export class TotalPrice implements Action {
+  public readonly type = ActionTypes.SHOPPINGCART_TOTALPRICE;
+  constructor(public payload: number) {}
+}
+
+export type Actions = Add | Remove | Increment | Decrement | TotalQty | TotalPrice;

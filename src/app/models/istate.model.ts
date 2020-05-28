@@ -4,4 +4,6 @@ export interface IState {
   readonly productcatalog: Array<IProduct>;
   readonly product: IProduct;
   readonly shoppingcart: Array<IProduct>;
+  readonly shoppingcartTotalQty: number;
+  readonly shoppingcartTotalPrice: number;
 }

@@ -1,6 +1,6 @@
 <div (click)="$event.stopPropagation()">
-  
-<app-shoppingcart-product *ngFor="let item of shoppingcart | async" [item]="item" ></app-shoppingcart-product>
+
+  <app-shoppingcart-product *ngFor="let item of shoppingcart | async" [item]="item"></app-shoppingcart-product>
 
   <!-- <div>
       <div class="p-3 d-flex justify-content-center align-items-center">
@@ -14,7 +14,7 @@
     <div class="ml-2">
       <div class="total-price">
         Totalt:
-        <span class="ml-1">  SEK</span>
+        <span class="ml-1"> {{totalPrice}} SEK</span>
       </div>
       <small class="text-muted">inkl. moms</small>
     </div>

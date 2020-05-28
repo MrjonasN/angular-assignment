@@ -5,13 +5,14 @@ import { IShoppingCart } from '../../models/ishoppingcart.model';
 const initialState: Array<IShoppingCart> = [];
 
 export function ShoppingCartReducer(state = initialState, action: Actions) {
-
   switch (action.type) {
     case ActionTypes.SHOPPINGCART_ADD:
       return (state = [...state, action.payload]);
 
     case ActionTypes.SHOPPINGCART_REMOVE:
-      return state = state.filter(item => item.product._id !== action.payload)
+      return (state = state.filter(
+        (item) => item.product._id !== action.payload
+      ));
 
     case ActionTypes.SHOPPINGCART_INCREMENT:
       let incItemIndex = state.findIndex((item) => {
@@ -41,4 +42,3 @@ export function ShoppingCartReducer(state = initialState, action: Actions) {
       return state;
   }
 }
-
