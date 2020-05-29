@@ -37,13 +37,13 @@ export class ShoppingCartService {
     this.store
       .select((store) => store.shoppingcart)
       .subscribe((res) => (this.cart = res));
-    let exists = this.cart.find((p) => {
-      return p.product._id === product._id;
+    let exists = this.cart.find((item) => {
+      return item.product._id === product._id;
     });
-    if (!exists) {
-      this.store.dispatch(new ShoppingCartActions.Add({ product, quantity }));
-    } else {
+    if (exists) {
       this.increment({ product, quantity });
+    } else {
+      this.store.dispatch(new ShoppingCartActions.Add({ product, quantity }));
     }
     this.totalQty();
     this.totalPrice();
